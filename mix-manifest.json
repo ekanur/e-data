@@ -1,0 +1,23 @@
+{
+    "/public/assets/vendor/js/bootstrap.js": "/public/assets/vendor/js/bootstrap.js",
+    "/public/assets/vendor/js/helpers.js": "/public/assets/vendor/js/helpers.js",
+    "/public/assets/vendor/js/menu.js": "/public/assets/vendor/js/menu.js",
+    "/public/assets/vendor/libs/apex-charts/apexcharts.js": "/public/assets/vendor/libs/apex-charts/apexcharts.js",
+    "/public/assets/vendor/libs/highlight/highlight.js": "/public/assets/vendor/libs/highlight/highlight.js",
+    "/public/assets/vendor/libs/jquery/jquery.js": "/public/assets/vendor/libs/jquery/jquery.js",
+    "/public/assets/vendor/libs/masonry/masonry.js": "/public/assets/vendor/libs/masonry/masonry.js",
+    "/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js": "/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js",
+    "/public/assets/vendor/libs/popper/popper.js": "/public/assets/vendor/libs/popper/popper.js",
+    "/public/js/laravel-user-management.js": "/public/js/laravel-user-management.js",
+    "/public/js/alpine.js": "/public/js/alpine.js",
+    "/public/assets/vendor/libs/highlight/highlight-github.css": "/public/assets/vendor/libs/highlight/highlight-github.css",
+    "/public/assets/vendor/css/pages/page-misc.css": "/public/assets/vendor/css/pages/page-misc.css",
+    "/public/assets/vendor/css/pages/page-icons.css": "/public/assets/vendor/css/pages/page-icons.css",
+    "/public/assets/vendor/css/pages/page-auth.css": "/public/assets/vendor/css/pages/page-auth.css",
+    "/public/assets/vendor/css/pages/page-account-settings.css": "/public/assets/vendor/css/pages/page-account-settings.css",
+    "/public/assets/vendor/fonts/boxicons.css": "/public/assets/vendor/fonts/boxicons.css",
+    "/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css": "/public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css",
+    "/public/assets/vendor/libs/highlight/highlight.css": "/public/assets/vendor/libs/highlight/highlight.css",
+    "/public/assets/vendor/libs/apex-charts/apex-charts.css": "/public/assets/vendor/libs/apex-charts/apex-charts.css",
+    "/public/assets/vendor/css/theme-default.css": "/public/assets/vendor/css/theme-default.css"
+}

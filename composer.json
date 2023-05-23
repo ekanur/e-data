@@ -12,7 +12,7 @@
     "fruitcake/laravel-cors": "^2.0.5",
     "guzzlehttp/guzzle": "^7.2",
     "laravel/framework": "^9.0",
-    "laravel/jetstream": "^2.1",
+    "laravel/jetstream": "*",
     "laravel/sanctum": "^2.14",
     "laravel/tinker": "^2.7",
     "livewire/livewire": "^2.11"
@@ -24,7 +24,7 @@
     "nunomaduro/collision": "^6.1",
     "phpunit/phpunit": "^9.5.10",
     "spatie/laravel-ignition": "^1.0",
-    "themeselection/sneat-html-laravel-jetstream": "dev-master"
+    "themeselection/sneat-html-laravel-jetstream": "*"
   },
   "autoload": {
     "psr-4": {

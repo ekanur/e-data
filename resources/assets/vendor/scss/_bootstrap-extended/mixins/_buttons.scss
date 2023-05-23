@@ -2,8 +2,8 @@
 // *******************************************************************************
 
 // Basic
-@mixin button-variant($background: null, $border: null, $active-background: null, $active-border: null) {
-}
+// @mixin button-variant($background: null, $border: null, $active-background: null, $active-border: null) {
+// }
 @mixin template-button-variant($parent, $background, $color: null, $border: null) {
   $background: $background;
   $border: $background;

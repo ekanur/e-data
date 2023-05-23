@@ -1,5 +1,5 @@
 @php
-$configData = Helper::appClasses();
+
 $customizerHidden = 'customizer-hide';
 @endphp
 
@@ -18,7 +18,6 @@ $customizerHidden = 'customizer-hide';
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
       <div class="w-100 d-flex justify-content-center">
-        <img src="{{asset('assets/img/illustrations/boy-with-rocket-'.$configData['style'].'.png')}}" class="img-fluid" alt="Login image" width="700" data-app-dark-img="illustrations/boy-with-rocket-dark.png" data-app-light-img="illustrations/boy-with-rocket-light.png">
       </div>
     </div>
     <!-- /Left Text -->

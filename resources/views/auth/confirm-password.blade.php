@@ -18,7 +18,6 @@ $customizerHidden = 'customizer-hide';
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
       <div class="w-100 d-flex justify-content-center">
-      
       </div>
     </div>
     <!-- /Left Text -->

@@ -1,4 +1,5 @@
 @php
+
 $customizerHidden = 'customizer-hide';
 @endphp
 

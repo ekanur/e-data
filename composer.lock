@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df43c2c75f420a5092db1f7e51737515",
+    "content-hash": "2416eca0a05ff8fa19b8db8b5e417108",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -8749,12 +8749,14 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "themeselection/sneat-html-laravel-jetstream": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }

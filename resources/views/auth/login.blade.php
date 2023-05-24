@@ -27,7 +27,7 @@
             @csrf
             <div class="mb-3">
               <label for="email" class="form-label">Email or Username</label>
-              <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus>
+              <input type="text" class="form-control" id="email" name="username" placeholder="Enter your email or username" autofocus>
               @error('email')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -53,14 +53,14 @@
                 @enderror
               </div>
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="remember-me" {{ old('remember') ? 'checked' : '' }}>
                 <label class="form-check-label" for="remember-me">
                   Remember Me
                 </label>
               </div>
-            </div>
+            </div> --}}
             <div class="mb-3">
               <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
             </div>

@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('halaman', function (Blueprint $table) {
+            $table->id();
+            $table->string("judul");
+            $table->string("url")->unique();
+            $table->string("isi")->nullable();
+            $table->boolean("is_published");
+            $table->timestamps();
+        });
     }
 
     /**

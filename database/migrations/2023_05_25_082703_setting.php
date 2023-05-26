@@ -13,7 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('setting', function (Blueprint $table) {
+            $table->id();
+            $table->string("setting")->unique();
+            $table->string("value");
+            $table->timestamps();
+        });
     }
 
     /**

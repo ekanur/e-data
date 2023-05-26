@@ -13,7 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('karya_ilmiah', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul');
+            $table->string('bahasa');
+            $table->integer('jenis_dokumen_id');
+            $table->integer("mahasiswa_id");
+            $table->integer("dosen_pa");
+            $table->integer('dosen_pembimbing');
+            $table->integer('dosen_penguji');
+            $table->integer('dosen_penguji_eksternal')->nullable();
+            $table->boolean("is_approved");
+            $table->json("json_dokumen");
+            $table->timestamps();
+        });
+        
     }
 
     /**

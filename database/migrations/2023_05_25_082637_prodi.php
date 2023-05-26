@@ -13,7 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('prodi', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama");
+            $table->string("kode");
+            $table->timestamps();
+        });
     }
 
     /**

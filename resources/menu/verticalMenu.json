@@ -1,13 +1,13 @@
 {
   "menu": [
     {
-      "url": "/",
+      "url": "/admin/",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard-analytics"
     },
     {
-      "url": "/statistik",
+      "url": "/admin/statistik",
       "name": "Statistik Pengunjung",
       "icon": "menu-icon tf-icons bx bx-layout",
       "slug": "statistik"
@@ -16,7 +16,7 @@
       "menuHeader": "E Data"
     },
     {
-      "url": "/dokumen",
+      "url": "/admin/dokumen",
       "name": "Dokumen",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
       "slug": "dokumen"
@@ -28,19 +28,19 @@
       "name": "Jurusan",
       "icon": "menu-icon tf-icons bx bx-lock-open-alt",
       "slug": "jurusan",
-      "url": "/jurusan"
+      "url": "/admin/jurusan"
     },
     {
       "name": "Prodi",
       "icon": "menu-icon tf-icons bx bx-cube-alt",
       "slug": "prodi",
-      "url": "/prodi"
+      "url": "/admin/prodi"
     },
     {
       "name": "Jenis Dokumen",
       "icon": "menu-icon tf-icons bx bx-cube-alt",
       "slug": "jenis-dokumen",
-      "url": "/jenis-dokumen"
+      "url": "/admin/jenis-dokumen"
     },
     {
       "menuHeader": "Master User"
@@ -49,13 +49,13 @@
       "name": "Admin",
       "icon": "menu-icon tf-icons bx bx-collection",
       "slug": "admin",
-      "url": "/admin"
+      "url": "/admin/admin"
     },
     {
       "name": "Dosen",
       "icon": "menu-icon tf-icons bx bx-box",
       "slug": "dosen",
-      "url": "/dosen"
+      "url": "/admin/dosen"
     },
     {
       "menuHeader": "Laporan"
@@ -64,25 +64,25 @@
       "name": "Laporan",
       "icon": "menu-icon tf-icons bx bx-detail",
       "slug": "laporan",
-      "url": "/laporan"
+      "url": "/admin/laporan"
     },
     {
       "menuHeader": "Setting"
     },
     {
-      "url": "/website",
+      "url": "/admin/website",
       "icon": "menu-icon tf-icons bx bx-support",
       "name": "Website",
       "slug": "website"
     },
     {
-      "url": "/halaman",
+      "url": "/admin/halaman",
       "icon": "menu-icon tf-icons bx bx-file",
       "name": "Halaman Statis",
       "slug": "halaman-statis"
     },
     {
-      "url": "/tc",
+      "url": "/admin/tc",
       "icon": "menu-icon tf-icons bx bx-file",
       "name": "Term & Condition",
       "slug": "tc"

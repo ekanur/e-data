@@ -46,9 +46,7 @@ $navbarDetached = ($navbarDetached ?? '');
         <ul class="navbar-nav flex-row align-items-center ms-auto">
 
           <!-- Place this tag where you want the button to render. -->
-          <li class="nav-item lh-1 me-3">
-            <a class="github-button" href="https://github.com/themeselection/sneat-html-laravel-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-laravel-admin-template-free on GitHub">Star</a>
-          </li>
+          
 
           <!-- User -->
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -67,8 +65,8 @@ $navbarDetached = ($navbarDetached ?? '');
                       </div>
                     </div>
                     <div class="flex-grow-1">
-                      <span class="fw-semibold d-block">John Doe</span>
-                      <small class="text-muted">Admin</small>
+                      <span class="fw-semibold d-block">{{Auth::user()->name}}</span>
+                      <small class="text-muted">{{Auth::user()->username}}</small>
                     </div>
                   </div>
                 </a>
@@ -82,13 +80,7 @@ $navbarDetached = ($navbarDetached ?? '');
                   <span class="align-middle">My Profile</span>
                 </a>
               </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <i class='bx bx-cog me-2'></i>
-                  <span class="align-middle">Settings</span>
-                </a>
-              </li>
-              <li>
+              {{-- <li>
                 <a class="dropdown-item" href="javascript:void(0);">
                   <span class="d-flex align-items-center align-middle">
                     <i class="flex-shrink-0 bx bx-credit-card me-2 pe-1"></i>
@@ -96,15 +88,20 @@ $navbarDetached = ($navbarDetached ?? '');
                     <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
                   </span>
                 </a>
+              </li> --}}
+              <li>
+                
               </li>
               <li>
-                <div class="dropdown-divider"></div>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <i class='bx bx-power-off me-2'></i>
-                  <span class="align-middle">Log Out</span>
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                  <a class="dropdown-item" href="#"
+                          onclick="event.preventDefault();
+                                      this.closest('form').submit();">
+                      <i class='bx bx-power-off me-2  text-danger'></i>
+                      <span class="align-middle text-danger">{{ __('Log Out') }}</span>
+                  </a>
+              </form>
               </li>
             </ul>
           </li>

@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 $controller_path = 'App\Http\Controllers';
 
+Route::get('/', function(){
+    return "home";
+})->name('home');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -25,7 +29,10 @@ Route::middleware([
     // })->name('dashboard');
 
     // Main Page Route
-Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
+    Route::prefix('admin')->group(function() use ($controller_path){
+        Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
+        Route::get("/jurusan", $controller_path . '\master_data\JurusanController@index')->name('jurusan');
+    });
 
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
@@ -88,6 +95,5 @@ Route::get('/form/layouts-horizontal', $controller_path . '\form_layouts\Horizon
 // tables
 Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
 
-Route::get("/jurusan", $controller_path . '\master_data\Jurusan@index')->name('jurusan');
 
 });

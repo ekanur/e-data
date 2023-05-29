@@ -2,17 +2,18 @@
 
 @section('title', 'Master Data - Jurusan')
 
-{{-- @section('vendor-style')
-<link rel="stylesheet" href="{{asset('assets/vendor/libs/apex-charts/apex-charts.css')}}">
+@section('vendor-style')
+<link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
 @endsection
 
 @section('vendor-script')
-<script src="{{asset('assets/vendor/libs/apex-charts/apexcharts.js')}}"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 @endsection
 
 @section('page-script')
-<script src="{{asset('assets/js/dashboards-analytics.js')}}"></script>
-@endsection --}}
+<script src="{{asset('assets/js/jurusan.js')}}"></script>
+@endsection
 
 @section('content')
 <div class="row">
@@ -22,8 +23,8 @@
   <div class="col-8 col-md-8 col-lg-8">
     <div class="card">
   <h5 class="card-header">Daftar Jurusan</h5>
-  <div class="table-responsive text-nowrap">
-    <table class="table table-hover">
+  <div class="card-datatable table-responsive pt-0">
+    <table class="table table-hover" id="jurusan">
       <thead>
         <tr>
           <th>Nama</th>
@@ -51,10 +52,10 @@
       </tbody>
     </table>
   </div>
+    
 </div>
   </div>
-  <div class="col-4 col-md-4 col-lg-4">
-    <div class="card mb-4">
+    <div class="card mb-4 col-4 col-md-4 col-lg-4">
       <h5 class="card-header">Tambah Jurusan</h5>
       <div class="card-body">
         <div class="mb-3">
@@ -66,11 +67,10 @@
           <input type="text" class="form-control" id="kode" placeholder="Kode Jurusan">
         </div>
         <div class="mb-3">
-          <button type="button" class="btn btn-primary">Simpan</button>
+          <button type="button" class="btn btn-success">Simpan</button>
         </div>
       </div>
     </div>
-  </div>
 </div>
 
 @endsection

@@ -22,10 +22,11 @@ return new class extends Migration
             $table->string('alamat')->nullable();
             $table->year('tahun_masuk');
             $table->year('tahun_lulus');
-            $table->integer("jurusan_id");
-            $table->integer("prodi_id");
+            $table->unsignedBigInteger("jurusan_id");
+            $table->unsignedBigInteger("prodi_id");
             $table->string("foto")->nullable();
             $table->timestamps();
+            
         });
         
     }

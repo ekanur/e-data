@@ -32,6 +32,10 @@ Route::middleware([
     Route::prefix('admin')->group(function() use ($controller_path){
         Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
         Route::get("/jurusan", $controller_path . '\master_data\JurusanController@index')->name('jurusan');
+        Route::post("/jurusan", $controller_path . '\master_data\JurusanController@create')->name('jurusan-create');
+        Route::get("/jurusan/{id}", $controller_path . '\master_data\JurusanController@edit')->name('jurusan-edit');
+        Route::post("/jurusan-update", $controller_path . '\master_data\JurusanController@update')->name('jurusan-update');
+        Route::get("/jurusan-delete/{id}", $controller_path . '\master_data\JurusanController@delete')->name('jurusan-delete');
     });
 
 // layout

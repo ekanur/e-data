@@ -36,6 +36,12 @@ Route::middleware([
         Route::get("/jurusan/{id}", $controller_path . '\master_data\JurusanController@edit')->name('jurusan-edit');
         Route::post("/jurusan-update", $controller_path . '\master_data\JurusanController@update')->name('jurusan-update');
         Route::get("/jurusan-delete/{id}", $controller_path . '\master_data\JurusanController@delete')->name('jurusan-delete');
+
+        Route::get("/prodi", $controller_path . '\master_data\ProdiController@index')->name('prodi');
+        Route::post("/prodi", $controller_path . '\master_data\ProdiController@create')->name('prodi-create');
+        Route::get("/prodi/{id}", $controller_path . '\master_data\ProdiController@edit')->name('prodi-edit');
+        Route::post("/prodi-update", $controller_path . '\master_data\ProdiController@update')->name('prodi-update');
+        Route::get("/prodi-delete/{id}", $controller_path . '\master_data\ProdiController@delete')->name('prodi-delete');        
     });
 
 // layout

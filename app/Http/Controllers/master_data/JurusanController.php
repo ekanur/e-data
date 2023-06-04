@@ -8,11 +8,15 @@ use App\Models\Jurusan;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class JurusanController extends Controller
 {
     function index() : View {
-        // confirmDelete();
+        $title = 'Hapus Jurusan!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
         return view("admin.master_data.jurusan")->with('jurusan',Jurusan::all());
     }
     
@@ -33,7 +37,8 @@ class JurusanController extends Controller
         $jurusan->nama = $request->nama;
         $jurusan->kode = $request->kode;
         $jurusan->save();
-
+        
+        
         return back()->with("success", "Berhasil menambah jurusan.");;
     }
 
@@ -42,7 +47,7 @@ class JurusanController extends Controller
             $jurusan = Jurusan::destroy($id);
         } catch (\Exception $e) {
             
-            return back()->with("danger", "Tidak dapat menghapus data Jurusan. ".Str::of($e)->substr(0,90)." ....");
+            return back()->with("danger", "Tidak dapat menghapus data Jurusan. ".Str::of($e)->substr(0,85)." ....");
         }
         
         return back()->with("success", "Berhasil hapus jurusan.");

@@ -22,8 +22,7 @@
   <!-- Include Scripts for customizer, helper, analytics, config -->
   @include('layouts/sections/scriptsIncludes')
 
-  @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-
+ 
 </head>
 
 <body>
@@ -37,6 +36,7 @@
 
   <!-- Include Scripts -->
   @include('layouts/sections/scripts')
+  @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 </body>
 

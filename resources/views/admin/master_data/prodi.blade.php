@@ -43,7 +43,7 @@
   <div class="col-8 col-md-8 col-lg-8">
     <div class="card">
   <h5 class="card-header">Daftar Prodi</h5>
-  <div class="card-datatable table-responsive pt-0">
+  <div class="card-datatable pt-0">
     <table class="table table-hover" id="prodi">
       <thead>
         <tr>

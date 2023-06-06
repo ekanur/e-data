@@ -19,7 +19,7 @@ class MahasiswaSeeder extends Seeder
             'nim' => '110533430596',
             'nama' => 'Ananda Erlangga',
             'hp' => '08882323',
-            'email' => 'admin@feb.um.ac.id',
+            'email' => 'ananda@feb.um.ac.id',
             'alamat' => 'Malang',
             'tahun_masuk' => 2011,
             'tahun_lulus' => 2015,

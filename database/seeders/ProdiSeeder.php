@@ -16,8 +16,8 @@ class ProdiSeeder extends Seeder
     public function run()
     {
         DB::table('prodi')->insert([
-            'nama' => 'Pendidikan Tata Niaga',
-            'kode' => 'PTN'
+            'nama' => 'Pendidikan Administrasi Perkantoran',
+            'kode' => 'PAP'
         ]);
     }
 }

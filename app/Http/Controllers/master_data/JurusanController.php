@@ -10,6 +10,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
 
+
 class JurusanController extends Controller
 {
     function index() : View {

@@ -35,13 +35,19 @@ Route::middleware([
         Route::post("/jurusan", $controller_path . '\master_data\JurusanController@create')->name('jurusan-create');
         Route::get("/jurusan/{id}", $controller_path . '\master_data\JurusanController@edit')->name('jurusan-edit');
         Route::post("/jurusan-update", $controller_path . '\master_data\JurusanController@update')->name('jurusan-update');
-        Route::get("/jurusan-delete/{id}", $controller_path . '\master_data\JurusanController@delete')->name('jurusan-delete');
+        Route::delete("/jurusan-delete/{id}", $controller_path . '\master_data\JurusanController@delete')->name('jurusan-delete');
 
         Route::get("/prodi", $controller_path . '\master_data\ProdiController@index')->name('prodi');
         Route::post("/prodi", $controller_path . '\master_data\ProdiController@create')->name('prodi-create');
         Route::get("/prodi/{id}", $controller_path . '\master_data\ProdiController@edit')->name('prodi-edit');
         Route::post("/prodi-update", $controller_path . '\master_data\ProdiController@update')->name('prodi-update');
-        Route::get("/prodi-delete/{id}", $controller_path . '\master_data\ProdiController@delete')->name('prodi-delete');        
+        Route::delete("/prodi-delete/{id}", $controller_path . '\master_data\ProdiController@delete')->name('prodi-delete');
+        
+        Route::get("/jenis-dokumen", $controller_path . '\master_data\JenisDokumenController@index')->name('jenis-dokumen');
+        Route::post("/jenis-dokumen", $controller_path . '\master_data\JenisDokumenController@create')->name('jenis-dokumen-create');
+        Route::get("/jenis-dokumen/{id}", $controller_path . '\master_data\JenisDokumenController@edit')->name('jenis-dokumen-edit');
+        Route::post("/jenis-dokumen-update", $controller_path . '\master_data\JenisDokumenController@update')->name('jenis-dokumen-update');
+        Route::delete("/jenis-dokumen-delete/{id}", $controller_path . '\master_data\JenisDokumenController@delete')->name('jenis-dokumen-delete');
     });
 
 // layout

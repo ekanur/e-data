@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('bahasa');
-            $table->integer('jenis_dokumen_id');
-            $table->integer("mahasiswa_id");
-            $table->integer("dosen_pa");
-            $table->integer('dosen_pembimbing');
-            $table->integer('dosen_penguji');
-            $table->integer('dosen_penguji_eksternal')->nullable();
+            $table->unsignedBigInteger('jenis_dokumen_id');
+            $table->unsignedBigInteger("mahasiswa_id");
+            $table->unsignedBigInteger("dosen_pa");
+            $table->unsignedBigInteger('dosen_pembimbing');
+            $table->unsignedBigInteger('dosen_penguji');
+            $table->string('dosen_penguji_eksternal')->nullable();
             $table->boolean("is_approved");
             $table->json("json_dokumen");
             $table->timestamps();

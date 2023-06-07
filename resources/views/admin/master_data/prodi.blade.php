@@ -12,7 +12,7 @@
 @endsection
 
 @section('page-script')
-<script src="{{asset('assets/js/prodi.js')}}"></script>
+<script src="{{asset('assets/js/datatable-init.js')}}"></script>
 @endsection
 
 @section('content')
@@ -44,7 +44,7 @@
     <div class="card">
   <h5 class="card-header">Daftar Prodi</h5>
   <div class="card-datatable pt-0">
-    <table class="table table-hover" id="prodi">
+    <table class="table table-hover" id="table">
       <thead>
         <tr>
           <th>Nama</th>

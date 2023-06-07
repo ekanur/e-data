@@ -48,6 +48,13 @@ Route::middleware([
         Route::get("/jenis-dokumen/{id}", $controller_path . '\master_data\JenisDokumenController@edit')->name('jenis-dokumen-edit');
         Route::post("/jenis-dokumen-update", $controller_path . '\master_data\JenisDokumenController@update')->name('jenis-dokumen-update');
         Route::delete("/jenis-dokumen-delete/{id}", $controller_path . '\master_data\JenisDokumenController@delete')->name('jenis-dokumen-delete');
+    
+        Route::get("/dokumen", $controller_path . '\admin\DokumenController@index')->name('dokumen');
+        Route::post("/dokumen", $controller_path . '\admin\DokumenController@create')->name('dokumen-create');
+        Route::get("/dokumen/{id}", $controller_path . '\admin\DokumenController@edit')->name('dokumen-edit');
+        Route::post("/dokumen-update", $controller_path . '\admin\DokumenController@update')->name('dokumen-update');
+        Route::delete("/dokumen-delete/{id}", $controller_path . '\admin\DokumenController@delete')->name('dokumen-delete');
+            
     });
 
 // layout

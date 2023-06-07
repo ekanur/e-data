@@ -12,7 +12,7 @@
 @endsection
 
 @section('page-script')
-<script src="{{asset('assets/js/jenis_dokumen.js')}}"></script>
+<script src="{{asset('assets/js/datatable-init.js')}}"></script>
 @endsection
 
 @section('content')
@@ -44,7 +44,7 @@
     <div class="card">
   <h5 class="card-header">Daftar Jenis Dokumen</h5>
   <div class="card-datatable pt-0">
-    <table class="table table-hover" id="Jenis Dokumen">
+    <table class="table table-hover" id="table">
       <thead>
         <tr>
           <th>Nama</th>

@@ -1,6 +1,6 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Master Data - Jurusan')
+@section('title', 'Dokumen Karya Ilmiah')
 
 @section('vendor-style')
 <link rel="stylesheet" href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
@@ -12,7 +12,7 @@
 @endsection
 
 @section('page-script')
-<script src="{{asset('assets/js/datatable-init.js')}}"></script>
+<script src="{{asset('assets/js/datatable.js')}}"></script>
 @endsection
 
 @section('content')
@@ -42,7 +42,7 @@
   <!--/ Total Revenue -->
   <div class="col-8 col-md-8 col-lg-8">
     <div class="card">
-  <h5 class="card-header">Daftar Jurusan</h5>
+  <h5 class="card-header">Daftar Jenis Dokumen</h5>
   <div class="card-datatable pt-0">
     <table class="table table-hover" id="table">
       <thead>
@@ -53,17 +53,17 @@
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
-        @foreach ($jurusan as $jurusan)
+        @foreach ($jenis_dokumen as $jenis_dokumen)
         <tr>
-          <td><strong>{{$jurusan->nama}}</strong></td>
-          <td>{{$jurusan->kode}}</td>
+          <td><strong>{{$jenis_dokumen->nama}}</strong></td>
+          <td>{{$jenis_dokumen->kode}}</td>
           
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{route("jurusan-edit", ["id" => $jurusan->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="{{route("jurusan-delete", ["id" => $jurusan->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
+                <a class="dropdown-item" href="{{route("jenis-dokumen-edit", ["id" => $jenis_dokumen->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                <a class="dropdown-item" href="{{route("jenis-dokumen-delete", ["id" => $jenis_dokumen->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
               </div>
             </div>
           </td>
@@ -77,18 +77,18 @@
   </div>
   @if (isset($edit))
     <div class="card mb-4 col-4 col-md-4 col-lg-4">
-      <h5 class="card-header">Edit Jurusan</h5>
-      <form action="{{route('jurusan-update')}}" method="post">
+      <h5 class="card-header">Edit Jenis Dokumen</h5>
+      <form action="{{route('jenis-dokumen-update')}}" method="post">
         @csrf
-        <input type="hidden" name="id" value="{{$jurusan->id}}">
+        <input type="hidden" name="id" value="{{$jenis_dokumen->id}}">
       <div class="card-body">
         <div class="mb-3">
-          <label for="nama" class="form-label">Nama Jurusan</label>
-          <input type="text" required name="nama" class="form-control" id="nama" placeholder="Nama Jurusan" value="{{ $edit->nama }}">
+          <label for="nama" class="form-label">Nama Jenis Dokumen</label>
+          <input type="text" required name="nama" class="form-control" id="nama" placeholder="Nama Jenis Dokumen" value="{{ $edit->nama }}">
         </div>
         <div class="mb-3">
           <label for="kode" class="form-label">Kode</label>
-          <input type="text" required name="kode" class="form-control" id="kode" placeholder="Kode Jurusan" value="{{ $edit->kode }}">
+          <input type="text" required name="kode" class="form-control" id="kode" placeholder="Kode Jenis Dokumen" value="{{ $edit->kode }}">
         </div>
         <div class="mb-3">
           <button type="submit" class="btn btn-success">Update</button>
@@ -98,17 +98,17 @@
     </div>  
   @else
     <div class="card mb-4 col-4 col-md-4 col-lg-4">
-      <h5 class="card-header">Tambah Jurusan</h5>
+      <h5 class="card-header">Tambah Jenis Dokumen</h5>
       <div class="card-body">
-        <form action="{{route('jurusan-create')}}" method="post">
+        <form action="{{route('jenis-dokumen-create')}}" method="post">
           @csrf
         <div class="mb-3">
-          <label for="nama" class="form-label">Nama Jurusan</label>
-          <input type="text" required class="form-control" id="nama" placeholder="Nama Jurusan" name="nama">
+          <label for="nama" class="form-label">Nama Jenis Dokumen</label>
+          <input type="text" required class="form-control" id="nama" placeholder="Nama Jenis Dokumen" name="nama">
         </div>
         <div class="mb-3">
           <label for="kode" class="form-label">Kode</label>
-          <input type="text" required class="form-control" id="kode" placeholder="Kode Jurusan" name="kode">
+          <input type="text" required class="form-control" id="kode" placeholder="Kode Jenis Dokumen" name="kode">
         </div>
         <div class="mb-3">
           <button type="submit" class="btn btn-success">Simpan</button>

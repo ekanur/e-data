@@ -12,7 +12,7 @@
 @endsection
 
 @section('page-script')
-<script src="{{asset('assets/js/datatable.js')}}"></script>
+<script src="{{asset('assets/js/datatable-init.js')}}"></script>
 @endsection
 
 @section('content')
@@ -40,30 +40,52 @@
   <!-- Total Revenue -->
   
   <!--/ Total Revenue -->
-  <div class="col-8 col-md-8 col-lg-8">
+  <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
-  <h5 class="card-header">Daftar Jenis Dokumen</h5>
+  <h5 class="card-header">Daftar Karya Ilmiah</h5>
   <div class="card-datatable pt-0">
     <table class="table table-hover" id="table">
       <thead>
         <tr>
-          <th>Nama</th>
-          <th>Kode</th>
-          <th>Actions</th>
+          <th>Judul</th>
+          <th>Prodi-Jurusan</th>
+          <th>PA</th>
+          <th>Pembimbing</th>
+          <th>Penguji</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
-        @foreach ($jenis_dokumen as $jenis_dokumen)
+        @foreach ($karya_ilmiah as $karya_ilmiah)
         <tr>
-          <td><strong>{{$jenis_dokumen->nama}}</strong></td>
-          <td>{{$jenis_dokumen->kode}}</td>
-          
+          <td>
+            <strong>{{$karya_ilmiah->judul}}</strong><br/>
+            <small><span class="badge rounded-pill bg-label-primary">{{$karya_ilmiah->jenis_dokumen->nama}}</span></small>
+
+            @unless ($karya_ilmiah->is_approved===0)
+            <span class="badge rounded-pill bg-label-success">Verified</span>
+            @endunless 
+            <br/>
+          <small>Oleh : {{$karya_ilmiah->mahasiswa->nama}} ({{$karya_ilmiah->mahasiswa->nim}})</small>
+            
+          </td>
+          <td><strong>{{$karya_ilmiah->mahasiswa->prodi->nama}}</strong> <br/>{{$karya_ilmiah->mahasiswa->jurusan->nama}}</td>
+          <td>
+            {{$karya_ilmiah->pa->name}}
+          </td>
+          <td>
+            {{$karya_ilmiah->pembimbing->name}}
+          </td>
+          <td>
+            {{$karya_ilmiah->penguji->name}}
+          </td>
           <td>
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{route("jenis-dokumen-edit", ["id" => $jenis_dokumen->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="{{route("jenis-dokumen-delete", ["id" => $jenis_dokumen->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
+                <a class="dropdown-item" href="{{route("karya-ilmiah-edit", ["id" => $karya_ilmiah->id])}}"><i class="bx bx-edit-alt me-1"></i> Detail</a>
+                <a class="dropdown-item" href="{{route("karya-ilmiah-edit", ["id" => $karya_ilmiah->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                <a class="dropdown-item" href="{{route("karya-ilmiah-delete", ["id" => $karya_ilmiah->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
               </div>
             </div>
           </td>
@@ -75,49 +97,6 @@
     
 </div>
   </div>
-  @if (isset($edit))
-    <div class="card mb-4 col-4 col-md-4 col-lg-4">
-      <h5 class="card-header">Edit Jenis Dokumen</h5>
-      <form action="{{route('jenis-dokumen-update')}}" method="post">
-        @csrf
-        <input type="hidden" name="id" value="{{$jenis_dokumen->id}}">
-      <div class="card-body">
-        <div class="mb-3">
-          <label for="nama" class="form-label">Nama Jenis Dokumen</label>
-          <input type="text" required name="nama" class="form-control" id="nama" placeholder="Nama Jenis Dokumen" value="{{ $edit->nama }}">
-        </div>
-        <div class="mb-3">
-          <label for="kode" class="form-label">Kode</label>
-          <input type="text" required name="kode" class="form-control" id="kode" placeholder="Kode Jenis Dokumen" value="{{ $edit->kode }}">
-        </div>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-success">Update</button>
-        </div>
-      </div>
-      </form>
-    </div>  
-  @else
-    <div class="card mb-4 col-4 col-md-4 col-lg-4">
-      <h5 class="card-header">Tambah Jenis Dokumen</h5>
-      <div class="card-body">
-        <form action="{{route('jenis-dokumen-create')}}" method="post">
-          @csrf
-        <div class="mb-3">
-          <label for="nama" class="form-label">Nama Jenis Dokumen</label>
-          <input type="text" required class="form-control" id="nama" placeholder="Nama Jenis Dokumen" name="nama">
-        </div>
-        <div class="mb-3">
-          <label for="kode" class="form-label">Kode</label>
-          <input type="text" required class="form-control" id="kode" placeholder="Kode Jenis Dokumen" name="kode">
-        </div>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-success">Simpan</button>
-        </div>
-        </form>
-      </div>
-    </div>
-      
-  @endif
     
 </div>
 

@@ -16,10 +16,10 @@
       "menuHeader": "E Data"
     },
     {
-      "url": "/admin/dokumen",
-      "name": "Dokumen",
+      "url": "/admin/karya-ilmiah",
+      "name": "Karya Ilmiah",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "dokumen"
+      "slug": "karya-ilmiah"
     },
     {
       "menuHeader": "Master Data"

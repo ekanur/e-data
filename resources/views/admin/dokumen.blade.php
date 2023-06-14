@@ -43,6 +43,15 @@
   <!--/ Total Revenue -->
   <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
+
+      <div class="card-header border-bottom">
+        <h5 class="card-title"><button class="btn btn-success">Tambah</button></h5>
+        <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
+          <div class="col-md-4 user_role"><select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option><option value="Admin">Admin</option><option value="Author">Author</option><option value="Editor">Editor</option><option value="Maintainer">Maintainer</option><option value="Subscriber">Subscriber</option></select></div>
+          <div class="col-md-4 user_plan"><select id="UserPlan" class="form-select text-capitalize"><option value=""> Select Plan </option><option value="Basic">Basic</option><option value="Company">Company</option><option value="Enterprise">Enterprise</option><option value="Team">Team</option></select></div>
+          <div class="col-md-4 user_status"><select id="FilterTransaction" class="form-select text-capitalize"><option value=""> Select Status </option><option value="Pending" class="text-capitalize">Pending</option><option value="Active" class="text-capitalize">Active</option><option value="Inactive" class="text-capitalize">Inactive</option></select></div>
+        </div>
+      </div>
     
   <div class="card-datatable pt-0">
     <table class="table table-hover" id="table">
@@ -66,35 +75,35 @@
             <span class="badge rounded-pill bg-label-success">Verified</span>
             @endunless 
             <br/>
-          <small>Oleh : {{$karya_ilmiah->mahasiswa->nama}} ({{$karya_ilmiah->mahasiswa->nim}})</small><br>
+          <small>{{$karya_ilmiah->mahasiswa->nama}} ({{$karya_ilmiah->mahasiswa->nim}})</small><br>
           <small class="text-truncate text-muted">{{$karya_ilmiah->mahasiswa->jurusan->nama}}, {{$karya_ilmiah->mahasiswa->prodi->nama}}</small>
             
           </td>
           <td width="5%">
             <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="{{$karya_ilmiah->pa->name }}" data-bs-original-title="{{$karya_ilmiah->pa->name }}">
-                <img src="http://172.17.147.58/assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-html=true data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="{{$karya_ilmiah->pa->name }}" data-bs-original-title="{{$karya_ilmiah->pa->name }}">
+                <img src="{{asset('assets/img/avatars/5.png')}}" alt="Avatar" class="rounded-circle">
               </li>
             </ul>
           </td>
           <td width="15%">
             <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center"> 
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="Pembimbing 1: {{$karya_ilmiah->pembimbing->name }}" data-bs-original-title="Pembimbing 1: {{$karya_ilmiah->pembimbing->name }}">
-                <img src="http://172.17.147.58/assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-html=true data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="<strong>Pembimbing 1</strong><br/> {{$karya_ilmiah->pembimbing->name }}" data-bs-original-title="<strong>Pembimbing 1</strong><br/> {{$karya_ilmiah->pembimbing->name }}">
+                <img src="{{asset('assets/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle">
               </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up"  aria-label="Pembimbing 2: {{$karya_ilmiah->penguji->name }}" data-bs-original-title="Pembimbing 2: {{$karya_ilmiah->penguji->name }}">
-                <img src="http://172.17.147.58/assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-html=true data-bs-placement="top" class="avatar avatar-md pull-up"  aria-label="<strong>Pembimbing 2</strong><br/> {{$karya_ilmiah->penguji->name }}" data-bs-original-title="<strong>Pembimbing 2</strong><br/> {{$karya_ilmiah->penguji->name }}">
+                <img src="{{asset('assets/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle">
               </li>
             </ul>
           </td>
           <td width="15%">
             <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
              
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="Penguji 1: {{$karya_ilmiah->pembimbing->name }}" data-bs-original-title="Penguji 1: {{$karya_ilmiah->pembimbing->name }}">
-                <img src="http://172.17.147.58/assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-html=true data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="<strong>Penguji 1</strong><br/> {{$karya_ilmiah->pembimbing->name }}" data-bs-original-title="<strong>Penguji 1</strong><br/> {{$karya_ilmiah->pembimbing->name }}">
+                <img src="{{asset('assets/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle">
               </li>
-              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="Penguji 2: {{$karya_ilmiah->penguji->name }}" data-bs-original-title="Penguji 2: {{$karya_ilmiah->penguji->name }}">
-                <img src="http://172.17.147.58/assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-html=true data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="<strong>Penguji 2</strong><br/> {{$karya_ilmiah->penguji->name }}" data-bs-original-title="<strong>Penguji 2</strong><br/> {{$karya_ilmiah->penguji->name }}">
+                <img src="{{asset('assets/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle">
               </li>
             </ul>
           </td>

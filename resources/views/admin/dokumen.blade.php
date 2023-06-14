@@ -16,13 +16,14 @@
 @endsection
 
 @section('content')
+<h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Karya Ilmiah</span></h4>
 
 @if(null !== session('danger'))
     <div class="row">
       <div class="col-12 col-md-12 col-lg-12">
         <div class="alert alert-danger alert-dismissible">
           {{session('danger')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" {{$karya_ilmiah->p->nama}} aria-label="Close"></button>
         </div>
       </div>
     </div>
@@ -31,7 +32,7 @@
   <div class="col-12 col-md-12 col-lg-12">
     <div class="alert alert-success alert-dismissible">
       {{session('success')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" {{$karya_ilmiah->p->nama}} aria-label="Close"></button>
     </div>
   </div>
 </div>
@@ -42,13 +43,12 @@
   <!--/ Total Revenue -->
   <div class="col-12 col-md-12 col-lg-12">
     <div class="card">
-  <h5 class="card-header">Daftar Karya Ilmiah</h5>
+    
   <div class="card-datatable pt-0">
     <table class="table table-hover" id="table">
       <thead>
         <tr>
           <th>Judul</th>
-          <th>Prodi-Jurusan</th>
           <th>PA</th>
           <th>Pembimbing</th>
           <th>Penguji</th>
@@ -58,32 +58,51 @@
       <tbody class="table-border-bottom-0">
         @foreach ($karya_ilmiah as $karya_ilmiah)
         <tr>
-          <td>
-            <strong>{{$karya_ilmiah->judul}}</strong><br/>
+          <td width="45%">
+            <h5>{{$karya_ilmiah->judul}}</h5>
             <small><span class="badge rounded-pill bg-label-primary">{{$karya_ilmiah->jenis_dokumen->nama}}</span></small>
 
             @unless ($karya_ilmiah->is_approved===0)
             <span class="badge rounded-pill bg-label-success">Verified</span>
             @endunless 
             <br/>
-          <small>Oleh : {{$karya_ilmiah->mahasiswa->nama}} ({{$karya_ilmiah->mahasiswa->nim}})</small>
+          <small>Oleh : {{$karya_ilmiah->mahasiswa->nama}} ({{$karya_ilmiah->mahasiswa->nim}})</small><br>
+          <small class="text-truncate text-muted">{{$karya_ilmiah->mahasiswa->jurusan->nama}}, {{$karya_ilmiah->mahasiswa->prodi->nama}}</small>
             
           </td>
-          <td><strong>{{$karya_ilmiah->mahasiswa->prodi->nama}}</strong> <br/>{{$karya_ilmiah->mahasiswa->jurusan->nama}}</td>
-          <td>
-            {{$karya_ilmiah->pa->name}}
+          <td width="5%">
+            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="{{$karya_ilmiah->pa->name }}" data-bs-original-title="{{$karya_ilmiah->pa->name }}">
+                <img src="http://172.17.147.58/assets/img/avatars/5.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </ul>
           </td>
-          <td>
-            {{$karya_ilmiah->pembimbing->name}}
+          <td width="15%">
+            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center"> 
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="Pembimbing 1: {{$karya_ilmiah->pembimbing->name }}" data-bs-original-title="Pembimbing 1: {{$karya_ilmiah->pembimbing->name }}">
+                <img src="http://172.17.147.58/assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
+              </li>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up"  aria-label="Pembimbing 2: {{$karya_ilmiah->penguji->name }}" data-bs-original-title="Pembimbing 2: {{$karya_ilmiah->penguji->name }}">
+                <img src="http://172.17.147.58/assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </ul>
           </td>
-          <td>
-            {{$karya_ilmiah->penguji->name}}
+          <td width="15%">
+            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+             
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="Penguji 1: {{$karya_ilmiah->pembimbing->name }}" data-bs-original-title="Penguji 1: {{$karya_ilmiah->pembimbing->name }}">
+                <img src="http://172.17.147.58/assets/img/avatars/6.png" alt="Avatar" class="rounded-circle">
+              </li>
+              <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-md pull-up" aria-label="Penguji 2: {{$karya_ilmiah->penguji->name }}" data-bs-original-title="Penguji 2: {{$karya_ilmiah->penguji->name }}">
+                <img src="http://172.17.147.58/assets/img/avatars/7.png" alt="Avatar" class="rounded-circle">
+              </li>
+            </ul>
           </td>
-          <td>
+          <td width="5%">
             <div class="dropdown">
               <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{route("karya-ilmiah-edit", ["id" => $karya_ilmiah->id])}}"><i class="bx bx-edit-alt me-1"></i> Detail</a>
+                <a class="dropdown-item" href="{{route("karya-ilmiah-edit", ["id" => $karya_ilmiah->id])}}"><i class="bx bx-download me-1"></i> Download</a>
                 <a class="dropdown-item" href="{{route("karya-ilmiah-edit", ["id" => $karya_ilmiah->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
                 <a class="dropdown-item" href="{{route("karya-ilmiah-delete", ["id" => $karya_ilmiah->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
               </div>

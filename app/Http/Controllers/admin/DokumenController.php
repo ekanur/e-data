@@ -22,7 +22,7 @@ class DokumenController extends Controller
     }
     
     function edit($id) : View{
-        return view("admin.dokumen")->with('edit', Karya_ilmiah::find($id));
+        return view("admin.dokumen-edit")->with('edit', Karya_ilmiah::find($id));
     }
 
     function update(Request $request): RedirectResponse{

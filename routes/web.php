@@ -54,7 +54,7 @@ Route::middleware([
         Route::get("/karya-ilmiah/{id}", $controller_path . '\admin\DokumenController@edit')->name('karya-ilmiah-edit');
         Route::post("/karya-ilmiah-update", $controller_path . '\admin\DokumenController@update')->name('karya-ilmiah-update');
         Route::delete("/karya-ilmiah-delete/{id}", $controller_path . '\admin\DokumenController@delete')->name('karya-ilmiah-delete');
-        // Route::get("/karya-ilmiah-detail/{id}", $controller_path . '\admin\DokumenController@edit')->name("karya-ilmiah-detail"); 
+        Route::get("/karya-ilmiah-add", $controller_path . '\admin\DokumenController@add')->name("karya-ilmiah-add"); 
     });
 
 // layout

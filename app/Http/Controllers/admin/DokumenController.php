@@ -20,6 +20,10 @@ class DokumenController extends Controller
 
         return view("admin.dokumen")->with('karya_ilmiah', Karya_ilmiah::with(['mahasiswa'=> ['jurusan', 'prodi'], 'pa',  'penguji', 'pembimbing', 'jenis_dokumen'])->get());
     }
+
+    function add() : View {
+        return view("admin.dokumen-add");
+    }
     
     function edit($id) : View{
         return view("admin.dokumen-edit")->with('edit', Karya_ilmiah::find($id));

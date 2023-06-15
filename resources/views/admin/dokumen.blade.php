@@ -45,7 +45,7 @@
     <div class="card">
 
       <div class="card-header border-bottom">
-        <h5 class="card-title"><button class="btn btn-success">Tambah</button></h5>
+        <h5 class="card-title"><a href='{{route('karya-ilmiah-add')}}' class="btn btn-success">Tambah</a></h5>
         <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
           <div class="col-md-4 user_role"><select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option><option value="Admin">Admin</option><option value="Author">Author</option><option value="Editor">Editor</option><option value="Maintainer">Maintainer</option><option value="Subscriber">Subscriber</option></select></div>
           <div class="col-md-4 user_plan"><select id="UserPlan" class="form-select text-capitalize"><option value=""> Select Plan </option><option value="Basic">Basic</option><option value="Company">Company</option><option value="Enterprise">Enterprise</option><option value="Team">Team</option></select></div>

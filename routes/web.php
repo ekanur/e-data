@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 $controller_path = 'App\Http\Controllers';
 
 Route::get('/', function(){
-    return "home";
+    return view("front.index");
 })->name('home');
 
 Route::middleware([

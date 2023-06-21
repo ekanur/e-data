@@ -30,7 +30,7 @@ Route::middleware([
 
     // Main Page Route
     Route::prefix('admin')->group(function() use ($controller_path){
-        Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
+        Route::get('/', $controller_path . '\admin\DashboardController@index')->name('admin-dashboard');
         Route::get("/jurusan", $controller_path . '\master_data\JurusanController@index')->name('jurusan');
         Route::post("/jurusan", $controller_path . '\master_data\JurusanController@create')->name('jurusan-create');
         Route::get("/jurusan/{id}", $controller_path . '\master_data\JurusanController@edit')->name('jurusan-edit');

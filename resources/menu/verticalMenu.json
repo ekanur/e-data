@@ -4,7 +4,7 @@
       "url": "/admin/",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
-      "slug": "dashboard-analytics"
+      "slug": "admin-dashboard"
     },
     {
       "url": "/admin/statistik",

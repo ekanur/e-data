@@ -19,6 +19,11 @@ Route::get('/', function(){
     return view("front.index");
 })->name('home');
 
+//halaman e data coba
+Route::get('/e-data',function(){
+    return view("front.formcoba");
+})->name('e-data');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

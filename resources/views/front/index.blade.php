@@ -2,42 +2,37 @@
 
 @section('content')
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-white p-0">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item me-2">
-            <a class="nav-link active text-white bg-primary" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item me-2">
-            <a class="nav-link text-dark ps-3 pe-3" href="e-data">E-Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">About us</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2 form-control-sm custom-font" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary btn-sm custom-font" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
   <!-- Main  -->
   <section>
-    <div class="card mt-3 mb-3 custom-margin border-0" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16)">
-      <div class="card-body pe-5 ps-5 pt-3 pb-2">
+    <div class="card m-5 custom-margin border-0  w-75 rounded" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16)">
+      <div class="card-body pe-5 ps-5 pb-0 pt-0">
         <!-- t&c title -->
-        <h3 class="card-title text-center mt-1 mb-2">Term & condition</h3>
+        <h3 class="card-title text-center m-4">Term & condition</h3>
         <!-- t&c  -->
-        <div class="overflow-auto tc-content">
-          <h5 class="pb-2 m-0 fw-normal">First heading</h5>
-          <p class="pe-3 custom-font text-secondary">
+        <div class="overflow-auto tc-content pe-3">
+          <p class="text-secondary">
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
+         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis, 
          laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
           </p>

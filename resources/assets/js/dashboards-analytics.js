@@ -427,7 +427,7 @@
       series: [37, 15, 20, 13, 15],
       colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success, config.colors.warning],
       stroke: {
-        width: 7,
+        width: 5,
         colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success, config.colors.warning]
       },
       dataLabels: {

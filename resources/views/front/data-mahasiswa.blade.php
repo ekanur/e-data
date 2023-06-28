@@ -9,8 +9,8 @@
       <div class="card-header align-items-center justify-content-center w-100">
         <div class="container wizard d-flex justify-content-center align-content-center p-0">
           <div class="w-100 p-3 text-white bg-primary rounded text-center">INPUT DATA MAHASISWA</div>
-          <div class="w-100 p-3 text-white bg-primary rounded text-center">INPUT DATA AKADEMIK</div>
-          <div class="w-100 p-3 text-white bg-primary rounded text-center">UPLOAD DATA KARYA ILMIAH</div>
+          <div class="w-100 p-3 text-dark bg-white rounded text-center">INPUT DATA AKADEMIK</div>
+          <div class="w-100 p-3 text-dark bg-white rounded text-center">UPLOAD DATA KARYA ILMIAH</div>
         </div>
       </div>
 
@@ -63,7 +63,7 @@
             <div class="col-sm-10">
               {{-- <div class="form-group">
                 <select class="form-control" id="jurusan" name="jurusan">
-                   @foreach 
+                   @foreach
                    ($jurusans as $jurusan)
                       <option value="{{ $jurusan->id }}">{{ $jurusan->nama }}</option>
                    @endforeach

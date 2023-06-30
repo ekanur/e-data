@@ -61,19 +61,11 @@
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label" for="jurusan">JURUSAN</label>
             <div class="col-sm-10">
-              {{-- <div class="form-group">
-                <select class="form-control" id="jurusan" name="jurusan">
-                   @foreach
-                   ($jurusans as $jurusan)
-                      <option value="{{ $jurusan->id }}">{{ $jurusan->nama }}</option>
-                   @endforeach
-                </select>
-             </div> --}}
              <select class="form-select"  for="jurusan" id="jurusan" name="jurusan">
               <option value="" class="text-grey">--- Pilih Jurusan ---</option>
-              <option value="#">One</option>
-              <option value="#">Two</option>
-              <option value="#">Three</option>
+              @foreach ($jurusan as $datajurusan)
+                <option value={{ $datajurusan->id }}>{{ $datajurusan->nama}}</option>
+              @endforeach
             </select>
             </div>
           </div>
@@ -82,9 +74,9 @@
             <div class="col-sm-10">
               <select class="form-select"  for="jurusan" id="jurusan" name="jurusan">
                 <option value="" class="text-grey">--- Pilih Prodi ---</option>
-                <option value="#">One</option>
-                <option value="#">Two</option>
-                <option value="#">Three</option>
+                @foreach ($prodi as $dataprodi)
+                <option value={{ $dataprodi->id }}>{{ $dataprodi->nama}}</option>
+              @endforeach
               </select>
             </div>
           </div>

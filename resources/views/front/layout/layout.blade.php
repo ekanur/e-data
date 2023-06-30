@@ -39,7 +39,6 @@
                 <a class="nav-link {{ route('about-us') ? 'active' : 'disable' }}" href="{{ route('about-us') }}">About Us</a>
               </li>
             </ul>
-
             <form>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">
@@ -61,7 +60,6 @@
     <!-- content -->
     @yield('content')
 
-    <!-- <img src="{{asset('assets/img/front/logo.png')}}" height="50%" /> -->
     <!-- / content -->
 
 

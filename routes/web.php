@@ -19,8 +19,9 @@ Route::get('/', function(){
     return view("front.index");
 })->name('home');
 
+
 // formulir karya ilmiah
-Route::get('/data-mahasiswa', function(){
+Route::get('/data-mahasiswa', 'App\Http\Controllers\DataController@index' , function(){
     return view("front.data-mahasiswa");
 })->name('data-mahasiswa');
 

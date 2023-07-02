@@ -15,7 +15,9 @@
       </div>
 
       <div class="card-body">
-        <form>
+        <form method="POST" action="{{ route('store-mahasiswa') }}">
+          @csrf
+          @method('PUT')
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label" for="nim">NIM</label>
             <div class="col-sm-10">
@@ -23,15 +25,15 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="nama-lengkap">NAMA</label>
+            <label class="col-sm-2 col-form-label" for="nama">NAMA</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nama-lengkap" name="nama" placeholder="Nama lengkap" />
+              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama lengkap" />
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="no-hp">NO HP</label>
+            <label class="col-sm-2 col-form-label" for="hp">NO HP</label>
             <div class="col-sm-10">
-              <input type="tel" class="form-control" id="no-hp" name="no-hp" placeholder="No hp aktif" />
+              <input type="tel" class="form-control" id="hp" name="hp" placeholder="No hp aktif" />
             </div>
           </div>
           <div class="row mb-3">
@@ -49,19 +51,19 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="tahun-angkatan">TAHUN ANGKATAN</label>
+            <label class="col-sm-2 col-form-label" for="tahun_angkatan">TAHUN ANGKATAN</label>
             <div class="col-sm-10">
               <div class="container d-flex justify-content-center p-0">
-                <input class="form-control bg-white" for="tahun-masuk" id="tahun-masuk" name="tahun-masuk" type="text" pattern="[0-9]{4}" placeholder="Tahun Masuk" />
+                <input class="form-control bg-white" for="tahun_masuk" id="tahun_masuk" name="tahun_masuk" type="text" pattern="[0-9]{4}" placeholder="Tahun Masuk" />
                 <label class="form-label m-2">/</label>
-                <input class="form-control bg-white" for="tahun-lulus" id="tahun-lulus" name="tahun-lulus" type="text" pattern="[0-9]{4}" placeholder="Tahun Lulus" />
+                <input class="form-control bg-white" for="tahun_lulus" id="tahun_lulus" name="tahun_lulus" type="text" pattern="[0-9]{4}" placeholder="Tahun Lulus" />
               </div>
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="jurusan">JURUSAN</label>
+            <label class="col-sm-2 col-form-label" for="jurusan_id">JURUSAN_id</label>
             <div class="col-sm-10">
-             <select class="form-select"  for="jurusan" id="jurusan" name="jurusan">
+             <select class="form-select"  for="jurusan_id" id="jurusan_id" name="jurusan_id">
               <option value="" class="text-grey">--- Pilih Jurusan ---</option>
               @foreach ($jurusan as $datajurusan)
                 <option value={{ $datajurusan->id }}>{{ $datajurusan->nama}}</option>
@@ -70,9 +72,9 @@
             </div>
           </div>
           <div class="row mb-3">
-            <label class="col-sm-2 col-form-label" for="email">PRODI</label>
+            <label class="col-sm-2 col-form-label" for="prodi_id">PRODI</label>
             <div class="col-sm-10">
-              <select class="form-select"  for="jurusan" id="jurusan" name="jurusan">
+              <select class="form-select"  for="prodi_id" id="prodi_id" name="prodi_id">
                 <option value="" class="text-grey">--- Pilih Prodi ---</option>
                 @foreach ($prodi as $dataprodi)
                 <option value={{ $dataprodi->id }}>{{ $dataprodi->nama}}</option>
@@ -84,14 +86,15 @@
             <label class="col-sm-2 col-form-label" for="foto">FOTO DIRI</label>
             <div class="col-sm-10">
               <div class="mb-0">
-                <input class="form-control" type="file" id="formFile">
+                <input class="form-control" type="file" for="foto" id="formFile" name="foto" id="foto">
               </div>
               <div class="form-text"> Unggah foto menggunakan jas almamater, max 2MB </div>
             </div>
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="submit" class="btn btn-primary">Back</button>
+              <button type="submit" class="btn btn-primary">Next</button>
             </div>
           </div>
         </form>

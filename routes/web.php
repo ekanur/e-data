@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 $controller_path = 'App\Http\Controllers';
 
 Route::get('/', function(){
-    return view("front.index");
-})->name('home');
-
+return view("front.index");})->name('home');
 
 // formulir karya ilmiah
-Route::get('/data-mahasiswa', 'App\Http\Controllers\DataController@index' , function(){
-    return view("front.data-mahasiswa");
-})->name('data-mahasiswa');
+//data mahasiswa
+Route::get('/data-mahasiswa', $controller_path . '\MahasiswaController@index')->name('index-mahasiswa');
+Route::get('/input-data-mahasiswa', $controller_path . '\MahasiswaController@cerate')->name('create-mahasiswa');
+Route::PUT('/store-data-mahasiswa', $controller_path . '\MahasiswaController@store')->name('store-mahasiswa');
+
 
 Route::get('/data-akademik', function(){
     return view("front.data-akademik");

@@ -50,7 +50,7 @@
               </div>
             </div>
             </form>
-            <button class="btn btn-primary me-2  ms-2" type="submit">Masuk</button>
+            <button class="btn btn-primary me-2  ms-2" type="submit">Login</button>
           </div>
         </div>
       </nav>

@@ -32,6 +32,7 @@ class MahasiswaController extends Controller
     $validasi = $request->validate([
       'nim' => 'required',
       'nama' => 'required',
+      'foto' => 'required|file|size:2048'
 
     ]);
 

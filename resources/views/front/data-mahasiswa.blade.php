@@ -15,9 +15,9 @@
       </div>
 
       <div class="card-body">
-        <form method="POST" action="{{ route('store-mahasiswa') }}">
+        <form method="POST" action="{{ route('store-mahasiswa') }}" enctype="multipart/form-data">
           @csrf
-          @method('PUT')
+          {{-- @method('PUT') --}}
           <div class="row mb-3">
             <label class="col-sm-2 col-form-label" for="nim">NIM</label>
             <div class="col-sm-10">

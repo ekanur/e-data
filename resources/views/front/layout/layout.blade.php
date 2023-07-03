@@ -30,13 +30,13 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link {{ route('home') ? 'active' : 'disable' }}" href="{{ route('home') }}">Home</a>
+                <a class="nav-link {{ Request::is('/') ? 'active text-primary' : '' }}" href="{{ route('home') }}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ route('e-data') ? 'active' : 'disable' }}" href="{{ route('e-data') }}">E-Data</a>
+                <a class="nav-link {{ Request::is('e-data') ? 'active text-primary' : '' }}" href="{{ route('e-data') }}">E-Data</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ route('about-us') ? 'active' : 'disable' }}" href="{{ route('about-us') }}">About Us</a>
+                <a class="nav-link {{ Request::is('about-us') ? 'active text-primary' : '' }}" href="{{ route('about-us') }}">About Us</a>
               </li>
             </ul>
             <form>

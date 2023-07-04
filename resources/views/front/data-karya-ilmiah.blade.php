@@ -138,6 +138,7 @@
           </div>
           <div class="row justify-content-end">
             <div class="col-sm-10">
+              <button type="button" class="btn btn-primary">Back</button>
               <button type="submit" class="btn btn-primary">Upload</button>
             </div>
           </div>

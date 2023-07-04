@@ -13,31 +13,28 @@
           <table class="table table-striped table-hover">
               <thead>
             <tr>
-              <th scope="col">No</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">NO INDEX</th>
+              <th scope="col">NAMA</th>
+              <th scope="col">NIM</th>
+              <th scope="col">JUDUL KARYA ILMIAH</th>
+              <th scope="col">ACTION</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>SK/AKT/2023/DDMMYYYYHHD</td>
+              <td>Nama Belum Ambil Dari Database</td>
+              <td>Judul belum ambil dari database</td>
+              <td><a href="#">DETAIL</a></td>
             </tr>
           </tbody>
-
           </table>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 @endsection

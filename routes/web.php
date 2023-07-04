@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 $controller_path = 'App\Http\Controllers';
 
-Route::get('/', function(){
-return view("front.index");})->name('home');
+// Route::get('/', function(){
+// return view("front.index");})->name('home');
+Route::get('/', $controller_path.'\IndexController@index')->name('home');
 
 // formulir karya ilmiah
 //data mahasiswa
 Route::get('/data-mahasiswa', $controller_path . '\MahasiswaController@index')->name('index-mahasiswa');
 Route::get('/input-data-mahasiswa', $controller_path . '\MahasiswaController@cerate')->name('create-mahasiswa');
-Route::PUT('/store-data-mahasiswa', $controller_path . '\MahasiswaController@store')->name('store-mahasiswa');
+Route::post('/store-data-mahasiswa', $controller_path . '\MahasiswaController@store')->name('store-mahasiswa');
 
 
 Route::get('/data-akademik', function(){
@@ -33,15 +34,17 @@ Route::get('/data-karya-ilmiah', function(){
     return view("front.data-karya-ilmiah");
 })->name('data-karya-ilmiah');
 
-//halaman e data coba
+//halaman e data
 Route::get('/e-data',function(){
     return view("front.e-data");
 })->name('e-data');
 
-//halaman about us coba
-Route::get('/about-us',function(){
-    return view("front.about-us");
-})->name('about-us');
+//halaman about us
+// Route::get('/about-us',function(){
+//     return view("front.about-us");
+// })->name('about-us');
+Route::get('/about-us', $controller_path.'\AboutusController@index')->name('about-us');
+
 
 Route::middleware([
     'auth:sanctum',

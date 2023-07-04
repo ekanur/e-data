@@ -3,37 +3,14 @@
 @section('content')
 
   <!-- Main  -->
-    <div class="card m-5 custom-margin border-0  w-75 rounded" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16)">
+    <div class="card m-5 custom-margin border-0  w-75 rounded mx-auto" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16)">
       <div class="card-body pe-5 ps-5 pb-0 pt-0">
         <!-- t&c title -->
-        <h3 class="card-title text-center m-4">Term & condition</h3>
+        <h3 class="card-title text-center m-4">{{ $halaman->judul }}</h3>
         <!-- t&c  -->
         <div class="overflow-auto tc-content pe-3">
           <p class="text-secondary">
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat nisi nam harum fugit praesentium nemo quas suscipit incidunt adipisci veniam corporis,
-         laboriosam ullam dolores exercitationem asperiores, consectetur voluptatibus, voluptates atque!
+            {{ $halaman->isi }}
           </p>
         </div>
         <!-- checbox & button  -->
@@ -45,19 +22,4 @@
         </div>
       </div>
     </div>
-  <!-- modal coba -->
-  {{-- <div class="modal fade" id="formModal" role="dialog" aria-labelledby="modalLable" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header"></div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer d-flex justify-content-center align-content-center">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
-          <button type="button" class="btn btn-primary">NEXT</button>
-        </div>
-      </div>
-    </div>
-  </div> --}}
 @endsection

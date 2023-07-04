@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('nip');
-            $table->boolean("pns");
+            $table->string('nip')->nullable();
+            $table->boolean("pns")->nullable();
             $table->string("hp")->nullable();
             $table->boolean("is_admin");
             $table->rememberToken();

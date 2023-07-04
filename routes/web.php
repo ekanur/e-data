@@ -49,6 +49,13 @@ Route::middleware([
         Route::get("/jenis-dokumen/{id}", $controller_path . '\master_data\JenisDokumenController@edit')->name('jenis-dokumen-edit');
         Route::post("/jenis-dokumen-update", $controller_path . '\master_data\JenisDokumenController@update')->name('jenis-dokumen-update');
         Route::delete("/jenis-dokumen-delete/{id}", $controller_path . '\master_data\JenisDokumenController@delete')->name('jenis-dokumen-delete');
+
+        Route::get("/user", $controller_path . '\master_data\UserController@index')->name('user');
+        Route::post("/user", $controller_path . '\master_data\UserController@create')->name('user-create');
+        Route::get("/user/{id}", $controller_path . '\master_data\UserController@edit')->name('user-edit');
+        Route::get("/user/profile/{id}", $controller_path . '\master_data\UserController@profile')->name('user-profile');
+        Route::post("/user-update", $controller_path . '\master_data\UserController@update')->name('user-update');
+        Route::delete("/user-delete/{id}", $controller_path . '\master_data\UserController@delete')->name('user-delete');
     
         Route::get("/karya-ilmiah", $controller_path . '\admin\DokumenController@index')->name('karya-ilmiah');
         Route::post("/karya-ilmiah", $controller_path . '\admin\DokumenController@create')->name('karya-ilmiah-create');

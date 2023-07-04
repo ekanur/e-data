@@ -53,7 +53,7 @@
     {
       "name": "Users",
       "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "admin",
+      "slug": "user",
       "url": "/admin/user",
       "is_admin": 1
     },

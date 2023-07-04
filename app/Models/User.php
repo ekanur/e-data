@@ -59,4 +59,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    function role(int $role) : string {
+        return $role === 1 ? "Admin":"Dosen";
+    }
 }

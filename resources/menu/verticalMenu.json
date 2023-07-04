@@ -4,88 +4,107 @@
       "url": "/admin/",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
-      "slug": "admin-dashboard"
+      "slug": "admin-dashboard",
+      "is_admin": 1
     },
     {
       "url": "/admin/statistik",
       "name": "Statistik Pengunjung",
       "icon": "menu-icon tf-icons bx bx-layout",
-      "slug": "statistik"
+      "slug": "statistik",
+      "is_admin": 1
     },
     {
-      "menuHeader": "E Data"
+      "menuHeader": "E Data",
+      "is_admin": 1
     },
     {
       "url": "/admin/karya-ilmiah",
       "name": "Karya Ilmiah",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
-      "slug": "karya-ilmiah"
+      "icon": "menu-icon tf-icons bx bx-dock-top",
+      "slug": "karya-ilmiah",
+      "is_admin": 1
     },
     {
-      "menuHeader": "Master Data"
+      "menuHeader": "Master Data",
+      "is_admin": 1
     },
     {
       "name": "Jurusan",
       "icon": "menu-icon tf-icons bx bx-lock-open-alt",
       "slug": "jurusan",
-      "url": "/admin/jurusan"
+      "url": "/admin/jurusan",
+      "is_admin": 1
     },
     {
       "name": "Prodi",
       "icon": "menu-icon tf-icons bx bx-cube-alt",
       "slug": "prodi",
-      "url": "/admin/prodi"
+      "url": "/admin/prodi",
+      "is_admin": 1
     },
     {
       "name": "Jenis Dokumen",
       "icon": "menu-icon tf-icons bx bx-cube-alt",
       "slug": "jenis-dokumen",
-      "url": "/admin/jenis-dokumen"
+      "url": "/admin/jenis-dokumen",
+      "is_admin": 1
     },
     {
-      "menuHeader": "Master User"
-    },
-    {
-      "name": "Admin",
-      "icon": "menu-icon tf-icons bx bx-collection",
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx-user",
       "slug": "admin",
-      "url": "/admin/admin"
+      "url": "/admin/user",
+      "is_admin": 1
     },
     {
-      "name": "Dosen",
-      "icon": "menu-icon tf-icons bx bx-box",
-      "slug": "dosen",
-      "url": "/admin/dosen"
-    },
-    {
-      "menuHeader": "Laporan"
-    },
-    {
-      "name": "Laporan",
-      "icon": "menu-icon tf-icons bx bx-detail",
-      "slug": "laporan",
-      "url": "/admin/laporan"
-    },
-    {
-      "menuHeader": "Setting"
+      "menuHeader": "Setting",
+      "is_admin": 1
     },
     {
       "url": "/admin/website",
       "icon": "menu-icon tf-icons bx bx-support",
       "name": "Website",
-      "slug": "website"
+      "slug": "website",
+      "is_admin": 1
     },
     {
       "url": "/admin/halaman",
       "icon": "menu-icon tf-icons bx bx-file",
       "name": "Halaman Statis",
-      "slug": "halaman-statis"
+      "slug": "halaman-statis",
+      "is_admin": 1
     },
     {
       "url": "/admin/tc",
       "icon": "menu-icon tf-icons bx bx-file",
       "name": "Term & Condition",
-      "slug": "tc"
+      "slug": "tc",
+      "is_admin": 1
+    },{
+      "url": "/dosen/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dosen-dashboard",
+      "is_admin": 0
+    },
+    {
+      "menuHeader": "E Data",
+      "is_admin": 0
+    },
+    {
+      "url": "/dosen/karya-ilmiah",
+      "name": "Karya Ilmiah",
+      "icon": "menu-icon tf-icons bx bx-dock-top",
+      "slug": "karya-ilmiah",
+      "is_admin": 0
+    },
+    {
+      "url": "/dosen/profil",
+      "name": "Profile",
+      "icon": "menu-icon tf-icons bx  bx-user",
+      "slug": "profil",
+      "is_admin": 0
     }
   ]
 }

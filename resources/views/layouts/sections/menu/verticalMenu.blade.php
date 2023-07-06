@@ -35,7 +35,7 @@
     $activeClass = null;
     $currentRouteName = Route::currentRouteName();
 
-    if ($currentRouteName === $menu->slug) {
+    if ($currentRouteName === $menu->slug || strpos($currentRouteName,$menu->slug) === 0) {
     $activeClass = 'active';
     }
     elseif (isset($menu->submenu)) {

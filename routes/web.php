@@ -65,6 +65,14 @@ Route::middleware([
         Route::get("/karya-ilmiah-add", $controller_path . '\admin\DokumenController@add')->name("karya-ilmiah-add"); 
     });
 
+    Route::prefix('api')->group(function() use ($controller_path){
+        Route::get('/mahasiswa', $controller_path . '\admin\DokumenController@jsonMahasiswa')->name('json-mahasiswa');
+        
+
+    });
+
+
+
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
 Route::get('/layouts/without-navbar', $controller_path . '\layouts\WithoutNavbar@index')->name('layouts-without-navbar');

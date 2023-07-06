@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id();
-            $table->string('nim');
+            $table->string('nim')->unique();
             $table->string('nama');
-            $table->string('hp');
-            $table->string('email');
+            $table->string('hp')->nullable();
+            $table->string('email')->nullable();
             $table->string('alamat')->nullable();
-            $table->year('tahun_masuk');
-            $table->year('tahun_lulus');
+            $table->year('tahun_masuk')->nullable();
+            $table->year('tahun_lulus')->nullable();
             $table->unsignedBigInteger("jurusan_id");
             $table->unsignedBigInteger("prodi_id");
             $table->string("foto")->nullable();

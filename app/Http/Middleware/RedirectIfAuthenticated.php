@@ -25,15 +25,15 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 // return redirect(RouteServiceProvider::HOME);
 
-                $user = Auth::guard($guard);
+                // $user = Auth::guard($guard);
 
                 // to admin dashboard
-                if($user->is_admin === 1) {
+                if(auth()->user()->is_admin === 1) {
                     return redirect(route('admin-dashboard'));
                 }
 
                 // to user dashboard
-                else if($user->is_admin === 0) {
+                else if(auth()->user()->is_admin === 0) {
                     return redirect(route('dosen-dashboard'));
                 }
             }

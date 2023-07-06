@@ -58,6 +58,13 @@
       "is_admin": 1
     },
     {
+      "name": "Mahasiswa",
+      "icon": "menu-icon tf-icons bx bxs-graduation",
+      "slug": "mahasiswa",
+      "url": "/admin/mahasiswa",
+      "is_admin": 1
+    },
+    {
       "menuHeader": "Setting",
       "is_admin": 1
     },

@@ -29,7 +29,7 @@ class JenisDokumenController extends Controller
         $jenis_dokumen->nama = $request->nama;
         $jenis_dokumen->kode = $request->kode;
         $jenis_dokumen->save();
-        return back()->with("success", "Berhasil meng-update Jenis dokumen.");;
+        return redirect()->route("jenis-dokumen")->with("success", "Berhasil meng-update Jenis dokumen.");;
     }
 
     function create(Request $request): RedirectResponse{
@@ -39,7 +39,7 @@ class JenisDokumenController extends Controller
         $jenis_dokumen->save();
         
         
-        return back()->with("success", "Berhasil menambah Jenis dokumen.");;
+        return redirect()->route("jenis-dokumen")->with("success", "Berhasil menambah Jenis dokumen.");;
     }
 
     function delete($id): RedirectResponse{
@@ -47,9 +47,9 @@ class JenisDokumenController extends Controller
             $jenis_dokumen = Jenis_dokumen::destroy($id);
         } catch (\Exception $e) {
             
-            return back()->with("danger", "Tidak dapat menghapus data Dokumen. ".Str::of($e)->substr(0,85)." ....");
+            return redirect()->route("jenis-dokumen")->with("danger", "Tidak dapat menghapus data Dokumen. ".Str::of($e)->substr(0,85)." ....");
         }
         
-        return back()->with("success", "Berhasil hapus Jenis dokumen.");
+        return redirect()->route("jenis-dokumen")->with("success", "Berhasil hapus Jenis dokumen.");
     }
 }

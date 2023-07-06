@@ -35,7 +35,7 @@ class UserController extends Controller
         }
 
         $user->save();
-        return back()->with("success", "Berhasil meng-update User.");
+        return redirect()->route("user")->with("success", "Berhasil meng-update User.");
     }
 
     function create(Request $request): RedirectResponse{
@@ -56,7 +56,7 @@ class UserController extends Controller
         $user->save();
         
         
-        return back()->with("success", "Berhasil menambah User.");;
+        return redirect()->route("user")->with("success", "Berhasil menambah User.");;
     }
 
     function delete($id): RedirectResponse{
@@ -64,9 +64,9 @@ class UserController extends Controller
             $user = User::destroy($id);
         } catch (\Exception $e) {
             
-            return back()->with("danger", "Tidak dapat menghapus data User. ".Str::of($e)->substr(0,85)." ....");
+            return redirect()->route("user")->with("danger", "Tidak dapat menghapus data User. ".Str::of($e)->substr(0,85)." ....");
         }
         
-        return back()->with("success", "Berhasil hapus User.");
+        return redirect()->route("user")->with("success", "Berhasil hapus User.");
     }
 }

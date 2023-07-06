@@ -28,7 +28,7 @@ class ProdiController extends Controller
         $prodi->nama = $request->nama;
         $prodi->kode = $request->kode;
         $prodi->save();
-        return back()->with("success", "Berhasil meng-update prodi.");;
+        return redirect()->route("prodi")->with("success", "Berhasil meng-update prodi.");;
     }
 
     function create(Request $request): RedirectResponse{
@@ -38,7 +38,7 @@ class ProdiController extends Controller
         $prodi->save();
         
         
-        return back()->with("success", "Berhasil menambah prodi.");;
+        return redirect()->route("prodi")->with("success", "Berhasil menambah prodi.");;
     }
 
     function delete($id): RedirectResponse{
@@ -46,9 +46,9 @@ class ProdiController extends Controller
             $prodi = Prodi::destroy($id);
         } catch (\Exception $e) {
             
-            return back()->with("danger", "Tidak dapat menghapus data Prodi. ".Str::of($e)->substr(0,85)." ....");
+            return redirect()->route("prodi")->with("danger", "Tidak dapat menghapus data Prodi. ".Str::of($e)->substr(0,85)." ....");
         }
         
-        return back()->with("success", "Berhasil hapus prodi.");
+        return redirect()->route("prodi")->with("success", "Berhasil hapus prodi.");
     }
 }

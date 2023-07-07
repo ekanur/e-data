@@ -56,17 +56,30 @@
             <div class="mb-3 col-md-6 form-password-toggle fv-plugins-icon-container">
               <label class="form-label" for="confirmPassword">NIM Mahasiswa</label>
               <div class="input-group input-group-merge has-validation">
-                <input class="form-control" type="text" name="nim" id="nim" placeholder="Nomor Induk Mahasiswa">
+                <input class="form-control" required type="text" name="nim" id="nim" placeholder="Nomor Induk Mahasiswa">
                 <span class="input-group-text cursor-pointer"><i class='bx bx-search-alt'></i></span>
-              </div><div class="fv-plugins-message-container invalid-feedback"></div>
+              </div>
+              <div class="fv-plugins-message-container invalid-feedback">
+                @error('nim')
+                  <span class="text-danger form-text">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
             </div>
 
             <div class="mb-3 col-md-6 form-password-toggle fv-plugins-icon-container">
               <label class="form-label" for="confirmPassword">Nama Lengkap</label>
               <div class="input-group input-group-merge has-validation">
-                <input class="form-control" type="text" name="nama" id="confirmPassword" placeholder="">
+                <input class="form-control" required type="text" name="nama" id="confirmPassword" placeholder="">
                 
-              </div><div class="fv-plugins-message-container invalid-feedback"></div>
+              </div><div class="fv-plugins-message-container invalid-feedback">
+                @error('nama')
+                  <span class="text-danger form-text">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
+              </div>
             </div>
 
             <div class="mb-3 col-md-6 form-password-toggle fv-plugins-icon-container">
@@ -154,7 +167,7 @@
             
               <label class="form-label" for="confirmPassword">Judul Lengkap</label>
               <div class="input-group input-group-merge has-validation">
-                <input class="form-control" type="text" name="judul" placeholder="">
+                <input class="form-control" type="text" required name="judul" placeholder="">
                 
               </div>
               <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -193,43 +206,93 @@
               <div class="row">
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Halaman Cover</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_cover">
+                  @error('file_cover')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Halaman Judul</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file"  required id="formFile" name="file_judul">
+                  @error('file_judul')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Abstrak (ID)</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_abstrak_id">
+                  @error('file_abstrak_id')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Abstrak (EN)</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_abstrak_en">
+                  @error('file_abstrak_en')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Persetujuan</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_persetujuan">
+                  @error('file_persetujuan')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Pengesahan</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_pengesahan">
+                  @error('file_pengesahan')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div> 
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Pernyataan Keaslian</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_keaslian">
+                  @error('file_keaslian')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Halaman Lampiran</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_lampiran">
+                  @error('file_lampiran')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Dokumen Lengkap</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_lengkap">
+                  @error('file_lengkap')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Artikel</label>
-                  <input class="form-control" type="file" id="formFile" name="dokumen[]">
+                  <input class="form-control" type="file" required id="formFile" name="file_artikel">
+                  @error('file_artikel')
+                    <span class="text-danger form-text">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
                 </div>  
               </div>
               <input type="hidden">
@@ -253,7 +316,7 @@
       <h5 class="card-header border-top">
         <div class="form-check form-switch">
           <label class="form-check-label" for="flexSwitchCheckChecked" style="padding-left:1em;padding-top:0.3em">Approve</label>
-        <input class="form-check-input" style="width:2.5em;height:1.5em" type="checkbox" name="is_approved">
+        <input class="form-check-input" style="width:2.5em;height:1.5em" type="checkbox" name="is_approved" value=1>
         
         {{--  --}}        
       </div></h5>

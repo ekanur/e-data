@@ -23,7 +23,7 @@
       <div class="col-12 col-md-12 col-lg-12">
         <div class="alert alert-danger alert-dismissible">
           {{session('danger')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" {{$karya_ilmiah->p->nama}} aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
   <div class="col-12 col-md-12 col-lg-12">
     <div class="alert alert-success alert-dismissible">
       {{session('success')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" {{$karya_ilmiah->p->nama}} aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
 </div>

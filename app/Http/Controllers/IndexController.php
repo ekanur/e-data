@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
   public function index()
   {
-      $halaman = Halaman::where('url', 'url_tc')->firstOrFail();
+      $halaman = Halaman::where('url', 'url_tc')->first();
       return view('front.index', ['halaman' => $halaman]);
   }
 }

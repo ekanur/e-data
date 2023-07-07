@@ -31,7 +31,7 @@
     },
     {
       "name": "Jurusan",
-      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
+      "icon": "menu-icon tf-icons bx bx-cube-alt",
       "slug": "jurusan",
       "url": "/admin/jurusan",
       "is_admin": 1
@@ -51,17 +51,17 @@
       "is_admin": 1
     },
     {
-      "name": "Users",
-      "icon": "menu-icon tf-icons bx bx-user",
-      "slug": "user",
-      "url": "/admin/user",
-      "is_admin": 1
-    },
-    {
       "name": "Mahasiswa",
       "icon": "menu-icon tf-icons bx bxs-graduation",
       "slug": "mahasiswa",
       "url": "/admin/mahasiswa",
+      "is_admin": 1
+    },
+    {
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "user",
+      "url": "/admin/user",
       "is_admin": 1
     },
     {
@@ -78,8 +78,8 @@
     {
       "url": "/admin/halaman",
       "icon": "menu-icon tf-icons bx bx-file",
-      "name": "Halaman Statis",
-      "slug": "halaman-statis",
+      "name": "Halaman Depan",
+      "slug": "halaman",
       "is_admin": 1
     },
     {
@@ -88,7 +88,10 @@
       "name": "Term & Condition",
       "slug": "tc",
       "is_admin": 1
-    },{
+    },
+    
+    
+    {
       "url": "/dosen/",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",

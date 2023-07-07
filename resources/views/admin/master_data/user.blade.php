@@ -18,14 +18,14 @@
 @section('content')
 
 @if(null !== session('danger'))
-    <div class="row">
-      <div class="col-12 col-md-12 col-lg-12">
-        <div class="alert alert-danger alert-dismissible">
-          {{session('danger')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      </div>
+<div class="row">
+  <div class="col-12 col-md-12 col-lg-12">
+    <div class="alert alert-danger alert-dismissible">
+      {{session('danger')}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+  </div>
+</div>
 @elseif(null !== session('success'))
 <div class="row">
   <div class="col-12 col-md-12 col-lg-12">
@@ -37,49 +37,9 @@
 </div>
 @endif
 <div class="row">
-  <!-- Total Revenue -->
-  
-  <!--/ Total Revenue -->
-  <div class="col-8 col-md-8 col-lg-8">
-    <div class="card">
-  <h5 class="card-header">Daftar User</h5>
-  <div class="card-datatable pt-0">
-    <table class="table table-hover" id="table">
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>Username</th>
-          <th>Role</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody class="table-border-bottom-0">
-        @foreach ($user as $user)
-        <tr>
-          <td><strong>{{$user->name}}</strong><br/><small>{{$user->email}}</small></td>
-          <td>{{$user->username}}</td>
-          <td>{{$user->role($user->is_admin)}}</td>
-          
-          <td>
-            <div class="dropdown">
-              <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{route("user-edit", ["id" => $user->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                <a class="dropdown-item" href="{{route("user-profile", ["id" => $user->id])}}"><i class="bx bx-edit-alt me-1"></i> Profile</a>
-                <a class="dropdown-item" href="{{route("user-delete", ["id" => $user->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
-              </div>
-            </div>
-          </td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
-    
-</div>
-  </div>
   @if (isset($edit))
-    <div class="card mb-4 col-4 col-md-4 col-lg-4">
+  <div class="mb-4 col-12 col-md-4 col-lg-4">
+    <div class="card">
       <h5 class="card-header">Edit User</h5>
       <form action="{{route('user-update')}}" method="post">
         @csrf
@@ -92,38 +52,42 @@
             <option value="1" @if ($edit->is_admin == 1) selected @endif>Admin</option>
           </select>
         </div>
-      <div class="mb-3">
-        <label for="nama" class="form-label">Nama Lengkap</label>
-        <input type="text" required class="form-control" id="nama" placeholder="Nama Lengkap" name="name" value="{{$edit->name}}">
-      </div>
-      <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" required class="form-control" id="username" placeholder="Username" value="{{$edit->username}}" name="username">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">email</label>
-        <input type="email" required class="form-control" id="email" placeholder="Email" value="{{$edit->email}}" name="email">
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">password</label>
-        <input type="password" class="form-control" id="password" placeholder="...." name="password">
-        <div id="defaultFormControlHelp" class="form-text">Silakan isi password, jika ingin mengubah password.</div>
-      </div>
-      <div class="mb-3">
-        <label for="ulang_password" class="form-label">ulangi password</label>
-        <input type="password" class="form-control" id="ulang_password" placeholder="...." name="ulang_password">
-        <div id="defaultFormControlHelp" class="form-text">Pastikan sama dengan isian password di atas.</div>
-      </div>
-      <div class="mb-3">
-        <button type="submit" class="btn btn-success">Simpan</button>
-      </div>
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Lengkap</label>
+          <input type="text" required class="form-control" id="nama" placeholder="Nama Lengkap" name="name" value="{{$edit->name}}">
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" required class="form-control" id="username" placeholder="Username" value="{{$edit->username}}" name="username">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">email</label>
+          <input type="email" required class="form-control" id="email" placeholder="Email" value="{{$edit->email}}" name="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">password</label>
+          <input type="password" class="form-control" id="password" placeholder="...." name="password">
+          <div id="defaultFormControlHelp" class="form-text">Silakan isi password, jika ingin mengubah password.</div>
+        </div>
+        <div class="mb-3">
+          <label for="ulang_password" class="form-label">ulangi password</label>
+          <input type="password" class="form-control" id="ulang_password" placeholder="...." name="ulang_password">
+          <div id="defaultFormControlHelp" class="form-text">Pastikan sama dengan isian password di atas.</div>
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-success">Simpan</button>
+        </div>
       </form>
-    </div>  
+    </div>
+    
+  </div>  
   @else
-    <div class="card mb-4 col-4 col-md-4 col-lg-4">
+  <div class="mb-4 col-12 col-md-4 col-lg-4">
+    <div class="card">
       <h5 class="card-header">Tambah User</h5>
-      <div class="card-body">
-        <form action="{{route('user-create')}}" method="post">
+      
+      <form action="{{route('user-create')}}" method="post">
+        <div class="card-body">
           @csrf
           <div class="mb-3">
             <label for="nama" class="form-label">Role</label>
@@ -133,55 +97,97 @@
               <option value="1">Admin</option>
             </select>
           </div>
-        <div class="mb-3">
-          <label for="nama" class="form-label">Nama Lengkap</label>
-          <input type="text" required class="form-control" id="nama" placeholder="Nama Lengkap" name="name" value='{{ old('name') }}'>
-          @error('name')
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" required class="form-control" id="nama" placeholder="Nama Lengkap" name="name" value='{{ old('name') }}'>
+            @error('name')
             <span class="text-danger form-text">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
-          @enderror
-        </div>
-        <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" required class="form-control" id="username" placeholder="Username" name="username" value='{{ old('username') }}'>
-          @error('username')
+            @enderror
+          </div>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" required class="form-control" id="username" placeholder="Username" name="username" value='{{ old('username') }}'>
+            @error('username')
             <span class="text-danger form-text">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
-          @enderror
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">email</label>
-          <input type="email" required class="form-control" id="email" placeholder="Email" name="email" value='{{ old('email') }}'>
-          @error('email')
+            @enderror
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">email</label>
+            <input type="email" required class="form-control" id="email" placeholder="Email" name="email" value='{{ old('email') }}'>
+            @error('email')
             <span class="text-danger form-text">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
-          @enderror
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">password</label>
-          <input type="password" required class="form-control" id="password" placeholder="...." name="password">
-          @error('password')
+            @enderror
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">password</label>
+            <input type="password" required class="form-control" id="password" placeholder="...." name="password">
+            @error('password')
             <span class="text-danger form-text">
-                <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
             </span>
-          @enderror
+            @enderror
+          </div>
+          <div class="mb-3">
+            <label for="ulang_password" class="form-label">ulangi password</label>
+            <input type="password" required class="form-control" id="ulang_password" placeholder="...." name="ulang_password">
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-success">Simpan</button>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="ulang_password" class="form-label">ulangi password</label>
-          <input type="password" required class="form-control" id="ulang_password" placeholder="...." name="ulang_password">
-        </div>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-success">Simpan</button>
-        </div>
-        </form>
-      </div>
-    </div>
+      </form>
       
-  @endif
+    </div>
     
+  </div>
+  
+  @endif
+  <div class="col-12 col-md-8 col-lg-8">
+    <div class="card">
+      <h5 class="card-header">Daftar User</h5>
+      <div class="card-datatable pt-0">
+        <table class="table table-hover" id="table">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Username</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            @foreach ($user as $user)
+            <tr>
+              <td><strong>{{$user->name}}</strong><br/><small>{{$user->email}}</small></td>
+              <td>{{$user->username}}</td>
+              <td>{{$user->role($user->is_admin)}}</td>
+              
+              <td>
+                <div class="dropdown">
+                  <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{route("user-edit", ["id" => $user->id])}}"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                    <a class="dropdown-item" href="{{route("user-profile", ["id" => $user->id])}}"><i class="bx bx-edit-alt me-1"></i> Profile</a>
+                    <a class="dropdown-item" href="{{route("user-delete", ["id" => $user->id])}}" data-confirm-delete="true"><i class="bx bx-trash me-1"></i> Delete</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  </div>
+
+  
 </div>
 
 @endsection

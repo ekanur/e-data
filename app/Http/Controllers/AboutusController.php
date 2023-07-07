@@ -9,7 +9,7 @@ class AboutusController extends Controller
 {
   public function index()
   {
-      $halaman = Halaman::where('url', 'url_about-us')->firstOrFail();
+      $halaman = Halaman::where('url', 'url_about-us')->first();
       return view('front.about-us', ['halaman' => $halaman]);
   }
 }

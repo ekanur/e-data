@@ -23,10 +23,11 @@
 
     {{-- menu headers --}}
     @if (isset($menu->menuHeader))
-    <li class="menu-header small text-uppercase">
-      <span class="menu-header-text">{{ $menu->menuHeader }}</span>
-    </li>
-
+      @if (auth()->user()->is_admin == $menu->is_admin)
+        <li class="menu-header small text-uppercase">
+          <span class="menu-header-text">{{ $menu->menuHeader }}</span>
+        </li> 
+      @endif
     @else
 
     {{-- active menu method --}}
@@ -34,7 +35,7 @@
     $activeClass = null;
     $currentRouteName = Route::currentRouteName();
 
-    if ($currentRouteName === $menu->slug) {
+    if ($currentRouteName === $menu->slug || strpos($currentRouteName,$menu->slug) === 0) {
     $activeClass = 'active';
     }
     elseif (isset($menu->submenu)) {
@@ -56,6 +57,8 @@
     @endphp
 
     {{-- main menu --}}
+    @if (auth()->user()->is_admin == $menu->is_admin)
+    
     <li class="menu-item {{$activeClass}}">
       <a href="{{ isset($menu->url) ? url($menu->url) : 'javascript:void(0);' }}" class="{{ isset($menu->submenu) ? 'menu-link menu-toggle' : 'menu-link' }}" @if (isset($menu->target) and !empty($menu->target)) target="_blank" @endif>
         @isset($menu->icon)
@@ -69,6 +72,9 @@
       @include('layouts.sections.menu.submenu',['menu' => $menu->submenu])
       @endisset
     </li>
+    @endif
+
+    
     @endif
     @endforeach
   </ul>

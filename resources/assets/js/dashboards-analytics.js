@@ -18,12 +18,8 @@
     totalRevenueChartOptions = {
       series: [
         {
-          name: '2021',
-          data: [18, 7, 15, 29, 18, 12, 9]
-        },
-        {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17, -15]
+          
+          data: [18, 7, 15, 29, 18, 12, 13, 20, 9]
         }
       ],
       chart: {
@@ -78,7 +74,7 @@
         }
       },
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['PAP', 'PTN', 'MNJ', 'PAK', 'S1_AKN', 'D3_AKN', 'PEK', 'EKP', 'Pasca'],
         labels: {
           style: {
             fontSize: '13px',
@@ -427,12 +423,12 @@
         width: 130,
         type: 'donut'
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [85, 15, 50, 50],
-      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+      labels: ['Skripsi', 'Tesis', 'Diserasi', 'Tugas Akhir', 'Artikel'],
+      series: [37, 15, 20, 13, 15],
+      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success, config.colors.warning],
       stroke: {
         width: 5,
-        colors: cardColor
+        colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success, config.colors.warning]
       },
       dataLabels: {
         enabled: false,
@@ -453,7 +449,7 @@
       plotOptions: {
         pie: {
           donut: {
-            size: '75%',
+            size: '85%',
             labels: {
               show: true,
               value: {
@@ -473,9 +469,9 @@
                 show: true,
                 fontSize: '0.8125rem',
                 color: axisColor,
-                label: 'Weekly',
+                label: 'dokumen',
                 formatter: function (w) {
-                  return '38%';
+                  return '258';
                 }
               }
             }

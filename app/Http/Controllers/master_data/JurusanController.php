@@ -30,7 +30,8 @@ class JurusanController extends Controller
         $jurusan->nama = $request->nama;
         $jurusan->kode = $request->kode;
         $jurusan->save();
-        return back()->with("success", "Berhasil meng-update jurusan.");;
+        
+        return redirect()->route("jurusan")->with("success", "Berhasil meng-update jurusan.");;
     }
 
     function create(Request $request): RedirectResponse{
@@ -39,8 +40,7 @@ class JurusanController extends Controller
         $jurusan->kode = $request->kode;
         $jurusan->save();
         
-        
-        return back()->with("success", "Berhasil menambah jurusan.");;
+        return redirect()->route("jurusan")->with("success", "Berhasil menambah jurusan.");;
     }
 
     function delete($id): RedirectResponse{
@@ -48,9 +48,9 @@ class JurusanController extends Controller
             $jurusan = Jurusan::destroy($id);
         } catch (\Exception $e) {
             
-            return back()->with("danger", "Tidak dapat menghapus data Jurusan. ".Str::of($e)->substr(0,85)." ....");
+            return redirect()->route("jurusan")->with("danger", "Tidak dapat menghapus data Jurusan. ".Str::of($e)->substr(0,85)." ....");
         }
         
-        return back()->with("success", "Berhasil hapus jurusan.");
+        return redirect()->route("jurusan")->with("success", "Berhasil hapus jurusan.");
     }
 }

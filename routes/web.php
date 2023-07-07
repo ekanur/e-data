@@ -49,7 +49,8 @@ Route::get('/about-us', $controller_path.'\AboutusController@index')->name('abou
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified'
+    'verified',
+    'admin'
 ])->group(function () use ($controller_path) {
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
@@ -57,7 +58,7 @@ Route::middleware([
 
     // Main Page Route
     Route::prefix('admin')->group(function() use ($controller_path){
-        Route::get('/', $controller_path . '\dashboard\Analytics@index')->name('dashboard-analytics');
+        Route::get('/', $controller_path . '\admin\DashboardController@index')->name('admin-dashboard');
         Route::get("/jurusan", $controller_path . '\master_data\JurusanController@index')->name('jurusan');
         Route::post("/jurusan", $controller_path . '\master_data\JurusanController@create')->name('jurusan-create');
         Route::get("/jurusan/{id}", $controller_path . '\master_data\JurusanController@edit')->name('jurusan-edit');
@@ -76,13 +77,28 @@ Route::middleware([
         Route::post("/jenis-dokumen-update", $controller_path . '\master_data\JenisDokumenController@update')->name('jenis-dokumen-update');
         Route::delete("/jenis-dokumen-delete/{id}", $controller_path . '\master_data\JenisDokumenController@delete')->name('jenis-dokumen-delete');
 
+        Route::get("/user", $controller_path . '\master_data\UserController@index')->name('user');
+        Route::post("/user", $controller_path . '\master_data\UserController@create')->name('user-create');
+        Route::get("/user/{id}", $controller_path . '\master_data\UserController@edit')->name('user-edit');
+        Route::get("/user/profile/{id}", $controller_path . '\master_data\UserController@profile')->name('user-profile');
+        Route::post("/user-update", $controller_path . '\master_data\UserController@update')->name('user-update');
+        Route::delete("/user-delete/{id}", $controller_path . '\master_data\UserController@delete')->name('user-delete');
+    
         Route::get("/karya-ilmiah", $controller_path . '\admin\DokumenController@index')->name('karya-ilmiah');
         Route::post("/karya-ilmiah", $controller_path . '\admin\DokumenController@create')->name('karya-ilmiah-create');
         Route::get("/karya-ilmiah/{id}", $controller_path . '\admin\DokumenController@edit')->name('karya-ilmiah-edit');
         Route::post("/karya-ilmiah-update", $controller_path . '\admin\DokumenController@update')->name('karya-ilmiah-update');
         Route::delete("/karya-ilmiah-delete/{id}", $controller_path . '\admin\DokumenController@delete')->name('karya-ilmiah-delete');
-        Route::get("/karya-ilmiah-add", $controller_path . '\admin\DokumenController@add')->name("karya-ilmiah-add");
+        Route::get("/karya-ilmiah-add", $controller_path . '\admin\DokumenController@add')->name("karya-ilmiah-add"); 
     });
+
+    Route::prefix('api')->group(function() use ($controller_path){
+        Route::get('/mahasiswa', $controller_path . '\admin\DokumenController@jsonMahasiswa')->name('json-mahasiswa');
+        
+
+    });
+
+
 
 // layout
 Route::get('/layouts/without-menu', $controller_path . '\layouts\WithoutMenu@index')->name('layouts-without-menu');
@@ -145,5 +161,31 @@ Route::get('/form/layouts-horizontal', $controller_path . '\form_layouts\Horizon
 // tables
 Route::get('/tables/basic', $controller_path . '\tables\Basic@index')->name('tables-basic');
 
+
+});
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+    'dosen'
+])->group(function () use ($controller_path) {
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+
+    // Main Page Route
+    Route::prefix('dosen')->group(function() use ($controller_path){
+        Route::get('/', $controller_path . '\dosen\DashboardController@index')->name('dosen-dashboard');
+        
+        
+        // Route::get("/karya-ilmiah", $controller_path . '\dosen\DokumenController@index')->name('karya-ilmiah');
+        // Route::post("/karya-ilmiah", $controller_path . '\dosen\DokumenController@create')->name('karya-ilmiah-create');
+        // Route::get("/karya-ilmiah/{id}", $controller_path . '\dosen\DokumenController@edit')->name('karya-ilmiah-edit');
+        // Route::post("/karya-ilmiah-update", $controller_path . '\dosen\DokumenController@update')->name('karya-ilmiah-update');
+        // Route::delete("/karya-ilmiah-delete/{id}", $controller_path . '\dosen\DokumenController@delete')->name('karya-ilmiah-delete');
+        // Route::get("/karya-ilmiah-add", $controller_path . '\dosen\DokumenController@add')->name("karya-ilmiah-add"); 
+    });
 
 });

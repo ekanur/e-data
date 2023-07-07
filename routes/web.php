@@ -15,9 +15,36 @@ use Illuminate\Support\Facades\Route;
 
 $controller_path = 'App\Http\Controllers';
 
-Route::get('/', function(){
-    return view("front.index");
-})->name('home');
+// Route::get('/', function(){
+// return view("front.index");})->name('home');
+Route::get('/', $controller_path.'\IndexController@index')->name('home');
+
+// formulir karya ilmiah
+//data mahasiswa
+Route::get('/data-mahasiswa', $controller_path . '\MahasiswaController@index')->name('index-mahasiswa');
+Route::get('/input-data-mahasiswa', $controller_path . '\MahasiswaController@cerate')->name('create-mahasiswa');
+Route::post('/store-data-mahasiswa', $controller_path . '\MahasiswaController@store')->name('store-mahasiswa');
+
+
+Route::get('/data-akademik', function(){
+    return view("front.data-akademik");
+})->name('data-akademik');
+
+Route::get('/data-karya-ilmiah', function(){
+    return view("front.data-karya-ilmiah");
+})->name('data-karya-ilmiah');
+
+//halaman e data
+Route::get('/e-data',function(){
+    return view("front.e-data");
+})->name('e-data');
+
+//halaman about us
+// Route::get('/about-us',function(){
+//     return view("front.about-us");
+// })->name('about-us');
+Route::get('/about-us', $controller_path.'\AboutusController@index')->name('about-us');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -42,19 +69,19 @@ Route::middleware([
         Route::get("/prodi/{id}", $controller_path . '\master_data\ProdiController@edit')->name('prodi-edit');
         Route::post("/prodi-update", $controller_path . '\master_data\ProdiController@update')->name('prodi-update');
         Route::delete("/prodi-delete/{id}", $controller_path . '\master_data\ProdiController@delete')->name('prodi-delete');
-        
+
         Route::get("/jenis-dokumen", $controller_path . '\master_data\JenisDokumenController@index')->name('jenis-dokumen');
         Route::post("/jenis-dokumen", $controller_path . '\master_data\JenisDokumenController@create')->name('jenis-dokumen-create');
         Route::get("/jenis-dokumen/{id}", $controller_path . '\master_data\JenisDokumenController@edit')->name('jenis-dokumen-edit');
         Route::post("/jenis-dokumen-update", $controller_path . '\master_data\JenisDokumenController@update')->name('jenis-dokumen-update');
         Route::delete("/jenis-dokumen-delete/{id}", $controller_path . '\master_data\JenisDokumenController@delete')->name('jenis-dokumen-delete');
-    
+
         Route::get("/karya-ilmiah", $controller_path . '\admin\DokumenController@index')->name('karya-ilmiah');
         Route::post("/karya-ilmiah", $controller_path . '\admin\DokumenController@create')->name('karya-ilmiah-create');
         Route::get("/karya-ilmiah/{id}", $controller_path . '\admin\DokumenController@edit')->name('karya-ilmiah-edit');
         Route::post("/karya-ilmiah-update", $controller_path . '\admin\DokumenController@update')->name('karya-ilmiah-update');
         Route::delete("/karya-ilmiah-delete/{id}", $controller_path . '\admin\DokumenController@delete')->name('karya-ilmiah-delete');
-        Route::get("/karya-ilmiah-add", $controller_path . '\admin\DokumenController@add')->name("karya-ilmiah-add"); 
+        Route::get("/karya-ilmiah-add", $controller_path . '\admin\DokumenController@add')->name("karya-ilmiah-add");
     });
 
 // layout
